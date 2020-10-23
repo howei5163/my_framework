@@ -26,7 +26,7 @@ class Driver:
 
             if ConfigReader().read('driver')['disable-infobars'].upper()=="Y":
                 option.add_argument('--disable-infobars')
-                # 设置禁用浏览器正在被自动化程序控制的提示
+                # 设置禁用浏览器正在被自动化程序控制的提示，有些网站会通过这个提示来识别爬虫
 
             if ConfigReader().read('driver')['no-sandbox'].upper() == "Y":
                 option.add_argument('--no-sandbox')
@@ -39,11 +39,13 @@ class Driver:
             if  ConfigReader().read('driver')['hide-scrollbars'].upper() == "Y":
                 option.add_argument('--hide-scrollbars')  # 隐藏滚动条, 应对一些特殊页面
             if  ConfigReader().read('driver')['disable-pciture'].upper() == "Y":
-                option.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
+                option.add_argument('blink-settings=imagesEnabled=false') 
+                # 不加载图片, 提升速度
             if ConfigReader().read('driver')['phone'].upper() == "Y":
                 phone_size=ConfigReader().read('phone')['phone_size']
                 option.add_experimental_option('mobileEmulation', {'deviceName':phone_size})
                 print('当前设备为%s'%phone_size)
+                #模拟手机打开浏览器
             self.driver = webdriver.Chrome(chrome_options=option, executable_path=chromedriver_path)
             if ConfigReader().read('driver')['driver_mize'].upper() == "Y":
                 '''设置打开浏览器的大小'''
