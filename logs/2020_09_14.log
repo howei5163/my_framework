@@ -1,0 +1,21 @@
+[2020-09-14 09:24:13,000][MainThread:9040][task_id:common.logger][test_1.py:75][ERROR][搜索 '阿里巴巴',期望出现 '腾讯' ,失败]
+[2020-09-14 09:25:47,835][MainThread:9040][task_id:common.logger][test_1.py:81][ERROR][未知错误，错误信息：Traceback (most recent call last):
+  File "E:\my_Framework\case\test_1.py", line 59, in test_dataDrivenByDDT1
+    WebDriverWait(self.driver,20).until(lambda driver:self.driver.find_element_by_id("kw"))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+]
+[2020-09-14 09:25:56,183][MainThread:9040][task_id:urllib3.connectionpool][connectionpool.py:662][WARNING][Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))': /session/aa64d6ec2cc62690809c3789017e31c7]
+[2020-09-14 09:26:35,120][MainThread:6100][task_id:common.logger][test_1.py:75][ERROR][搜索 '阿里巴巴',期望出现 '腾讯' ,失败]
+[2020-09-14 09:26:42,695][MainThread:6100][task_id:common.logger][test_1.py:87][INFO][搜索 '美团外卖',期望出现 '百度' ,通过]
+[2020-09-14 09:26:50,334][MainThread:6100][task_id:common.logger][test_1.py:75][ERROR][搜索 '饿了么',期望出现 '蚂蚁金服' ,失败]
+[2020-09-14 09:27:19,642][MainThread:6100][task_id:common.logger][test_2.py:64][ERROR][搜索 '阿里巴巴',期望出现 ' 腾讯' ,失败]
+[2020-09-14 09:27:28,886][MainThread:6100][task_id:common.logger][test_2.py:74][INFO][搜索 '美团外卖',期望出现 '百度' ,通过]
+[2020-09-14 09:27:37,527][MainThread:6100][task_id:common.logger][test_2.py:64][ERROR][搜索 '饿了么',期望出现 '蚂蚁金服' ,失败]
+[2020-09-14 09:28:00,463][MainThread:6100][task_id:common.logger][test_3.py:60][ERROR][搜索 '阿里巴巴',期望出现 '腾讯' ,失败]
+[2020-09-14 09:28:09,390][MainThread:6100][task_id:common.logger][test_3.py:70][INFO][搜索 '美团外卖',期望出现 '百度' ,通过]
+[2020-09-14 09:28:18,279][MainThread:6100][task_id:common.logger][test_3.py:60][ERROR][搜索 '饿了么',期望出现 '蚂蚁金服' ,失败]
+[2020-09-14 09:28:34,463][MainThread:6100][task_id:common.logger][test_daneyuansu.py:33][INFO][已截图]
+[2020-09-14 09:28:36,240][MainThread:6100][task_id:common.logger][test_daneyuansu.py:33][INFO][已截图]
