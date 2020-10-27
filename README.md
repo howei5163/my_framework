@@ -21,6 +21,8 @@ PyMySQL               0.9.3
 requests              2.20.1
 selenium              3.141.0
 xlrd                  1.2.0
+beautifulsoup4        4.9.3
+
 ......
 
 ```
