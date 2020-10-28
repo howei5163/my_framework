@@ -38,7 +38,7 @@ my_Framework
         - report（输出报告）
         - logs（log 日志报告）
         - img（测试截图）
-        - config（配置文件,driver驱动）
+        - config（配置文件,driver驱动，driver不一定适合所有人的浏览器版本，最好根据自己版本进行下载）
         - case （测试用例）
         - README.md（项目介绍 md）
         - run_all.py（执行用例）
