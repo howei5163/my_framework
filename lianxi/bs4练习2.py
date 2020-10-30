@@ -5,18 +5,21 @@ from selenium import webdriver
 import os,re,requests,time
 from common.driver import Driver
 from tomorrow import threads
+from common.runtime import *
+import io
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')
 class Dowload_img():
     def __init__(self):
         ass=Driver()
         self.driver=ass.get_driver()
-
     def get_page_source(self,page,name):
         '''
         :param page:要下拉多少页
         :param name: 要下载的图片类别
         :return:
         '''
-        print('开始时间%s' % (time.strftime('%Y-%m-%d %H:%M:%S')))
+        print('%s下载任务开始时间%s' % (name,time.strftime('%Y-%m-%d %H:%M:%S')))
         # option=webdriver.ChromeOptions()
         # option.add_argument('headless')
         # driver=webdriver.Chrome(chrome_options=option,executable_path=chromedriver_path)
@@ -37,12 +40,16 @@ class Dowload_img():
             time.sleep(1)
         a=self.driver.page_source
         soup=BeautifulSoup(a,'html.parser')#如果是xml就改成xml.parser
+        # print(soup.prettify())#以html格式打印
         list=soup.find_all(class_='main_img img-hover')
+
         #定位单一元素
         # list=soup.find_all('img',{'class':'main_img img-hover'})
         #定位img标签下的class元素
         return list
+
     @threads(6,timeout=0.1)
+    # @runtime
     def img_list(self,page,name,filename,g):
         '''
         :param list:
@@ -75,7 +82,7 @@ class Dowload_img():
         print('%s文件夹中共有%s张图片' % (filename,len(os.listdir(filename))))
         print('本次共爬%s张图片' % n)
         self.driver.quit()
-        print('结束时间%s'%time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
+        print('%s下载任务结束时间%s'%(name,time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))))
         return li
 
 

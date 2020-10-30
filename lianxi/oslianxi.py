@@ -43,9 +43,13 @@ from common.path import *
 # '''文件的创建时间'''
 # print(os.path.getmtime(report_path))
 # '''文件的修改时间'''
-a=os.listdir(report_path)
-'''查找最新生产的文件'''
-a.sort(key=lambda fn:os.path.getctime(os.path.join(report_path,fn)))
-'''将list以创建时间进行降序排序(默认是降序)'''
-print(a[-1])
-'''此时列表中最后一个就是最新生成的文件'''
+# a=os.listdir(report_path)
+# '''查找最新生产的文件'''
+# a.sort(key=lambda fn:os.path.getctime(os.path.join(report_path,fn)))
+# '''将list以创建时间进行降序排序(默认是降序)'''
+# print(a[-1])
+# '''此时列表中最后一个就是最新生成的文件'''
+f=os.popen(r'python e:\my_Framework\run_all.py','r')
+#读取cmd输出结果
+print(f.read())
+f.close()

@@ -37,10 +37,11 @@ class Test(unittest.TestCase):
         switch(a)
     def zhou(self):
         link=self.driver.find_elements_by_xpath("//a[@class='img-anchor']")
-        #这味道所有视频的链接
+        #定位到所有需要的视频连接
         n=0
         headers={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36'}
-
+        globals()['a']=headers
+        '''把headers添加到全局变量'''
         for j in link:
             url=j.get_attribute('href')
             #获取url
@@ -75,6 +76,7 @@ class Test(unittest.TestCase):
                 self.driver.find_element_by_xpath('//li[@class="page-item next"]').click()
         except:
             print('没有下一页了')
+        print(globals()['a'])
     def tearDown(self) -> None:
         self.driver.quit()
 if __name__ == '__main__':
