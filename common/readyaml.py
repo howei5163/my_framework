@@ -7,5 +7,5 @@ def Readyaml(filename):
 
 if __name__ == '__main__':
     a=Readyaml(os.path.join(data_path,'shuju.yaml'))
-    print(a['user'],a['nb1']['user'])
+    # print(a['user'],a['nb1']['user'])
     print(a)
