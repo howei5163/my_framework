@@ -70,7 +70,6 @@ def write_excel(file_name,sheet_name,datas):
         print(str(traceback.format_exc()))
     try:
         workbook=xlrd.open_workbook(file_name)
-        #formatting_info在读取xlsx的文件时不要加会报错，这个参数可以显示更多内容
         worksheet=workbook.sheet_by_name(sheet_name)
         new_workbook=copy(workbook) #将xlrd对象拷贝转化为xlwt对象
         new_worksheet=new_workbook.get_sheet(sheet_name)
@@ -87,7 +86,7 @@ def write_excel(file_name,sheet_name,datas):
 
         for col_index in range(len(row)):
             for row_index in range(1,len(li)+1):
-                #因为第一行要写KEY值，所以要加一行
+                #因为第一行要写KEY值，所以要从第二行开始，最大值要加一，要不会少写一行数据
                 new_worksheet.write(row_index,col_index,list(li[row_index-1].values())[col_index],style)
 
 
