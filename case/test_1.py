@@ -75,7 +75,7 @@ class DataDrivenDDT1(unittest.TestCase,BaiduMainPage):
             print(u"查找的页面元素不存在，异常堆栈信息:" + str(traceback.format_exc()))
             # self.save_img('测试失败后截图1')
             raise
-
+            #这里如果不释放异常的话，HTMLTestRunner_cn的用例失败重跑功能不会执行
         except AssertionError as e:
             self.add_imgs()
             print(u"搜索 '%s',期望出现 '%s' ,失败" % (testdata, expectdata))
