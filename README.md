@@ -1,6 +1,6 @@
 [toc]
 注：此框架为本人练习所用，用例都是随便写的（毕竟实际项目的用例不能传到网上） 
-python + selenium + unittest + PageObject(PO 思想) + BeautifulReport(页面美观) or HTMLTestRunner_cn(使用方便)  + ddt(数据驱动) + log 日志 + 多浏览器支持（尚未实现，目前只有谷歌） + ini 文件读取
+ python + selenium + unittest + PageObject(PO 思想) + BeautifulReport(页面美观) or HTMLTestRunner_cn(使用方便)  + ddt(数据驱动) + log 日志 + 多浏览器支持（尚未实现，目前只有谷歌） + ini 文件读取
 
 # 1.框架注意点-使用前必看！
 - 项目完全依靠参数化构建，见文件`/config/config.ini`
