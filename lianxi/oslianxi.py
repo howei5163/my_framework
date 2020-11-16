@@ -22,6 +22,7 @@ from common.path import *
 # os.system("taskkill /IM chrome.exe /F")
 # os.system("taskkill /IM chromedriver.exe /F")
 # os.system('ipconfig')
+#os.system('touch %s'%filename)
 
 # if not os.path.exists(img_path):
 '''判断如果路径下不存在该文件夹，就生成一个，不可用于生成文件'''

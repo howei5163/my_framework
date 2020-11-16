@@ -10,7 +10,7 @@ class Jiekou():
         return r.status_code
     def send_requests(self):
         url = 'https://api.ioser.net/api/get_phone_info'
-        params = {"phone": 13436861052,
+        params = {"phone": 31531513553,
                   "access_token": "6hDyzeQknSytd8E3gtSaSKGy4uSAmx1s"}
         headers = {"Accept": "*/*",
                    "Accept-Encoding": "gzip, deflate, br",
@@ -28,6 +28,7 @@ class Testjiekou(unittest.TestCase):
         '''把接口返回结果模拟成200'''
         r=self.jiekou.send_requests()
         self.assertEquals(r,200)
+    @unittest.skip
     def test_fail_requests(self):
         self.jiekou.jiekou=mock.Mock(return_value=404,side_effect=self.jiekou.jiekou)
         '''吧接口返回结果模拟成404,side_effect参数会覆盖return_value，用真实数据进行测试'''
