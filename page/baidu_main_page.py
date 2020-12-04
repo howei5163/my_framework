@@ -1,4 +1,4 @@
-from page.browser_common import BrowserCommon
+from page.browser_page import BrowserCommon
 from locator.baidu_main import BaiduMainlocator
 
 #百度首页页面类
