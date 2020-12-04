@@ -1,8 +1,8 @@
-from page.page_base import Page
+from page.browser_common import BrowserCommon
 from locator.baidu_main import BaiduMainlocator
 
 #百度首页页面类
-class BaiduMainPage(Page,):
+class BaiduMainPage(BrowserCommon):
     #百度首页进入页面
     def jump_to(self,baidu_url=BaiduMainlocator.baidu_url):
         self.driver.get(baidu_url)
@@ -15,5 +15,5 @@ class BaiduMainPage(Page,):
         :return: 返回输入内容后点击搜索的操作
         '''
 
-        self.input(BaiduMainlocator.search_input,value)
-        self.click_element(BaiduMainlocator.search_button)
+        self.input(value,*BaiduMainlocator.search_input)
+        self.click_element(*BaiduMainlocator.search_button)

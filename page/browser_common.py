@@ -1,6 +1,7 @@
 import time
 from common.readConfig import ConfigReader
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 #浏览器类封装浏览器操作
 class BrowserCommon(object):
     def __init__(self,driver=None):
@@ -77,3 +78,19 @@ class BrowserCommon(object):
         :return:
         '''
         WebDriverWait(self.driver,timeout,0.5).until(*args)
+    def find_element(self,*loc):
+        return self.driver.find_element(*loc)
+
+    def find_elemetnts(self,*loc):
+        return self.driver.find_elements(*loc)
+
+    def click_element(self,*loc):
+        WebDriverWait(self.driver,EC.element_to_be_clickable(self.driver.find_element(*loc)))
+        #判断元素是否可点
+        self.find_element(*loc).click()
+
+    def input(self,value,*loc):
+        #确认元素可点击
+        WebDriverWait(self.driver,EC.element_to_be_clickable(self.driver.find_element(*loc)))
+        #输入框输入数据
+        self.find_element(*loc).send_keys(value)
