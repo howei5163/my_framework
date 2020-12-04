@@ -1,6 +1,6 @@
 [toc]
-注：此框架为本人练习所用
-python + selenium + unittest + PageObject(PO 思想) + BeautifulReport(页面美观) or HTMLTestRunner_cn(使用方便)  + ddt(数据驱动) + log 日志 + 多浏览器支持（尚未实现，目前只有谷歌） + ini 文件读取
+注：此框架用例都是随便写的（毕竟实际项目的用例不能传到网上） 
+ python + selenium + unittest + PageObject(PO 思想) + BeautifulReport(页面美观) or HTMLTestRunner_cn(使用方便)  + ddt(数据驱动) + log 日志 + 多浏览器支持（尚未实现，目前只有谷歌） + ini 文件读取
 
 # 1.框架注意点-使用前必看！
 - 项目完全依靠参数化构建，见文件`/config/config.ini`
@@ -38,6 +38,7 @@ my_Framework
         - report（输出报告）
         - logs（log 日志报告）
         - img（测试截图）
+        - jiekouauto（接口框架）
         - config（配置文件,driver驱动，driver不一定适合所有人的浏览器版本，最好根据自己版本进行下载）
         - case （测试用例）
         - README.md（项目介绍 md）
@@ -56,7 +57,8 @@ my_Framework
 7. 配置文件中可添加浏览器版本信息，目前是没有这项参数的。若添加了，之后再在 driver 装载器中补全代码即可
 8. 目前好多代码都在run_all.py中，如果觉得乱可以单独整理出来
 9. 可以用log把代码里的print都替换了，这样就会即保存到日志，又可以输出到控制台
-10. 其他......
+10. 接口框架目前只有简单的雏形，还可以进行优化
+11. 其他......
 
 
 
