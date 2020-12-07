@@ -1,6 +1,6 @@
 [toc]
 注：此框架用例都是随便写的（毕竟实际项目的用例不能传到网上） 
- python + selenium + unittest + PageObject(PO 思想) + BeautifulReport(页面美观) or HTMLTestRunner_cn(使用方便)  + ddt(数据驱动) + log 日志 + 多浏览器支持（尚未实现，目前只有谷歌） + ini 文件读取
+ python + selenium + unittest + PageObject(PO 思想) + BeautifulReport(页面美观) or HTMLTestRunner_cn(使用方便)  + ddt(数据驱动) + log 日志 + 多浏览器支持（尚未实现，目前只有谷歌） + ini 文件读取+接口框架
 
 # 1.框架注意点-使用前必看！
 - 项目完全依靠参数化构建，见文件`/config/config.ini`
@@ -15,13 +15,8 @@
 # 2.所需依赖
 本人使用的是 python 3.6
 ```
-ddt                   1.4.1
-pip                   20.2.3
-PyMySQL               0.9.3
-requests              2.20.1
-selenium              3.141.0
-xlrd                  1.2.0
-beautifulsoup4        4.9.3
+本地库的版本已导出至requirements.txt中
+使用pip install -r requirements.txt 安装即可
 
 ......
 
