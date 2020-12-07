@@ -10,7 +10,7 @@ from common.path import *
 log = logger.load_my_logging_cfg()
 '''该用例主要是演示另一种excal数据的调用方法'''
 @ddt.ddt
-class DataDrivenDDT1(unittest.TestCase):
+class DataDrivenDDT3(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         option = webdriver.ChromeOptions()
