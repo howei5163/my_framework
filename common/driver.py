@@ -15,7 +15,7 @@ class Driver:
             self.mysql_tool=None
 
     def assemble_driver(self):
-        if  ConfigReader().read('driver')['driver'].upper()=="CHROME" or "谷歌":
+        if  ConfigReader().read('driver')['driver'].upper()=="CHROME" or ConfigReader().read('driver')['driver'].upper()=="谷歌":
             option=webdriver.ChromeOptions()
             if ConfigReader().read('driver')['headless'].upper()=="Y":
                 option.add_argument('--headless')  # 设置谷歌无头浏览器
@@ -60,14 +60,15 @@ class Driver:
                 self.driver.implicitly_wait(ConfigReader().read('driver')['implicitly_wait'])
             else:
                 raise RuntimeError('config中driver信息输入错误')
-        elif  ConfigReader().read('driver')['driver'].upper()=="FIREFOX" or "火狐":
+        elif  ConfigReader().read('driver')['driver'].upper()=="FIREFOX" or ConfigReader().read('driver')['driver'].upper()=="火狐":
             '''
             火狐浏览器目前没打算用，如果需要的话可以再次进行开发
             '''
             fire_options=webdriver.FirefoxOptions()
             fire_options.add_argument('no-sandbox')
             self.driver=webdriver.Firefox(executable_path=firefoxdriver_path,firefox_options=fire_options)
-
+        else:
+            print('浏览器不是谷歌或火狐浏览器')
     #获取驱动
     def get_driver(self):
         return self.driver

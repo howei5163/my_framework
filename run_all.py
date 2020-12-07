@@ -32,6 +32,7 @@ def add_case(case=case_path,rule='test*.py'):
     discover=unittest.defaultTestLoader.discover(case,
                                                  pattern=rule,
                                                  top_level_dir=None)
+
     print(discover)
     return discover
 # @threads(10)其他多线程写法
@@ -112,7 +113,7 @@ def send_mail(sender,psw,receivers,smtpserver,report_file,port):
     smtp.quit()
     print('test report email has send out!')
 def start_test():
-    if ConfigReader().read('driver')['driver'].upper()=='CHROME' or '谷歌':
+    if ConfigReader().read('driver')['driver'].upper()=='谷歌'or ConfigReader().read('driver')['driver'].upper() =='CHROME':
         print('当前浏览器为谷歌浏览器')
         if ConfigReader().read('driver')['headless'].upper()=="Y":
             print('已开启无头浏览器模式')
@@ -126,10 +127,12 @@ def start_test():
             print('已开启无痕浏览器(隐身模式)')
         if ConfigReader().read('driver')['driver_mize'].upper() == "Y":
             print('浏览器窗口设置为最大化')
-        elif ConfigReader().read('driver')['driver_mize'].upper() == "N":
+        if ConfigReader().read('driver')['driver_mize'].upper() == "N":
             print('浏览器分辨率为{}x{}'.format(ConfigReader().read('driver')['scroll_width'],ConfigReader().read('driver')['scroll_height']))
-    if ConfigReader().read('driver')['driver'].upper()=='FIREFOX' or '火狐':
+    elif ConfigReader().read('driver')['driver'].upper()=='FIREFOX' or ConfigReader().read('driver')['driver'].upper()=='火狐':
         print('当前浏览器为火狐浏览器')
+    else:
+        print('浏览器不是谷歌或火狐浏览器')
 
 
 def close_driver():
@@ -153,10 +156,10 @@ def run_threads(all_case):
         t.join()
 if __name__ == '__main__':
     start_test()
-    all_case=suites(DataDrivenDDT1)
+    # all_case=suites(DataDrivenDDT1)
     # 只添加一个类里的用例部分用例，参数输入导入的测试类，该类必须继承unittest.TestCase
 
-    # all_case=add_case()
+    all_case=add_case()
     # #加载所有符合条件的用例
 
     #其他多线程写法，这种方法会生成3个报告，并将前两个报告的内容统合到第三个报告内
