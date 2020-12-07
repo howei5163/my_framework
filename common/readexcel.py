@@ -117,8 +117,12 @@ def write_excel(file_name,sheet_name,datas,new=None):
             for i in li.keys():
                 for v in range(nrows):
                     if i == worksheet.cell(v,2).value:
-                        new_worksheet.write(v,9,'',redfont(''))
-                        new_worksheet.write(v,9,li[i],redfont(li[i]))
+                        new_worksheet.write(v,10,'',redfont(''))
+                        new_worksheet.write(v,11,'',redfont(''))
+                        new_worksheet.write(v,12,'',redfont(''))
+                        new_worksheet.write(v,10,li[i],redfont(li[i]))
+                        new_worksheet.write(v,11,li['实际结果'],redfont(li['实际结果']))
+                        new_worksheet.write(v,12,li['返回状态码'],redfont(li['返回状态码']))
                         # print(li[i])
                         new_workbook.save(file_name)
 

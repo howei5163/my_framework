@@ -16,13 +16,19 @@ def send(method,url,data,headers,id,yuqi):
     try:
         if method.lower() == 'get':
             r = requests.get(url, params=data, headers=headers)
+            print('状态码：%s'%r.status_code)
             result = check_res(r.text, yuqi)
             li[id] = result
+            li['实际结果']=r.text
+            li['返回状态吗']=r.status_code
             # print(r.text)
         elif method.lower() == 'post':
             r = requests.post(url, data=data, headers=headers)
+            print('状态码：%s'%r.status_code)
             result = check_res(r.text, yuqi)
             li[id] = result
+            li['实际结果'] = r.text
+            li['返回状态吗'] = r.status_code
         else:
             print('接口类型不是post或get')
             li[id]=False
