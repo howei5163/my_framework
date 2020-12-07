@@ -7,6 +7,7 @@ from common import logger
 import ddt,time
 from common.readexcel import Readexcel
 from common.path import *
+from common.path import *
 log = logger.load_my_logging_cfg()
 '''该用例主要是演示另一种excal数据的调用方法'''
 @ddt.ddt
@@ -20,7 +21,7 @@ class DataDrivenDDT1(unittest.TestCase):
         # option.add_argument("disable-infobars")
         '''浏览器打开时会有一个浏览正在受到自动化软件控制，上面的代码可以去掉，
         不过无头浏览器加不加这个都行，反正也看不见吗'''
-        cls.driver = webdriver.Chrome(chrome_options=option)
+        cls.driver = webdriver.Chrome(chrome_options=option,executable_path=chromedriver_path)
         cls.driver.maximize_window()
     def setUp(self):
         # 在python3.x 中，如果在这里初始化driver ，因为3.x版本 unittest 运行机制不同，会导致用例失败后截图失败

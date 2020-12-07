@@ -1,11 +1,11 @@
 import unittest,time
 from selenium import  webdriver
-
+from common.path import *
 class Test_morethread(unittest.TestCase):
     def setUp(self) -> None:
         option=webdriver.ChromeOptions()
         option.add_argument('headless')
-        self.driver=webdriver.Chrome(chrome_options=option)
+        self.driver=webdriver.Chrome(chrome_options=option,executable_path=chromedriver_path)
 
     def test_case_01(self):
         start=time.strftime('%H:%M:%S')
