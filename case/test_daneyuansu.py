@@ -19,7 +19,7 @@ class Test_yuansu(unittest.TestCase):
         # option.add_argument("disable-infobars")
         '''浏览器打开时会有一个浏览正在受到自动化软件控制，上面的代码可以去掉，
         不过无头浏览器加不加这个都行，反正也看不见吗'''
-        cls.driver = webdriver.Chrome(chrome_options=option)
+        cls.driver = webdriver.Chrome(chrome_options=option,executable_path=chromedriver_path)
 
     @ddt.data(*Readexcel(os.path.join(data_path,'yuansu.xlsx')))
     @ddt.unpack
