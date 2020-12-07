@@ -7,7 +7,6 @@ from common import logger
 import ddt,time
 from common.readexcel import Readexcel
 from common.path import *
-from common.path import *
 log = logger.load_my_logging_cfg()
 '''该用例主要是演示另一种excal数据的调用方法'''
 @ddt.ddt

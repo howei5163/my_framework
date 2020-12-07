@@ -7,7 +7,6 @@ from common import logger
 import ddt,time
 from common.readtxt import Readtxt
 from common.path import *
-from common.path import *
 log = logger.load_my_logging_cfg()
 '''该用例主要是眼熟调用txt文件的用法'''
 @ddt.ddt
