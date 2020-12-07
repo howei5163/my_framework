@@ -33,13 +33,15 @@ class DataDrivenDDT1(unittest.TestCase,BaiduMainPage):
         #
         # cls.driver = webdriver.Chrome(chrome_options=option,executable_path=Chrome_path)
         print('test_1开始测试')
-        cls.assembler=Driver()
-        cls.driver=cls.assembler.get_driver()
-        cls.mysql=cls.assembler.get_mysql()
+        # cls.assembler=Driver()
+        # cls.driver=cls.assembler.get_driver()
+        # cls.mysql=cls.assembler.get_mysql()
     def setUp(self):
+        self.assembler = Driver()
+        self.driver = self.assembler.get_driver()
+        self.mysql = self.assembler.get_mysql()
         # url = "http://www.baidu.com"
         self.jump_to()
-        # 在python3.x 中，如果在这里初始化driver ，因为3.x版本 unittest 运行机制不同，会导致用例失败后截图失败
         self.imgs=[]
         self.addCleanup(self.cleanup)  #每次执行完自动删除图片
     def add_imgs(self):  #如果用HTMLTestRunner_cn截图的话得写这个方法
